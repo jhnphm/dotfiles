@@ -45,8 +45,7 @@ plugins=(scd zsh-syntax-highlighting git git-remote-branch gitignore git-extras 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
-export PATH=~/.opt/x-tools/arm-stellaris-eabi/bin:$PATH
+export PATH=~/.opt/x-tools/arm-stellaris-eabi/bin:~/.bin:$PATH
 
 eval `dircolors`
 alias cp='cp --reflink=auto'
