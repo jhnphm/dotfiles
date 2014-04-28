@@ -1,0 +1,3 @@
+PATH=~/.opt/x-tools/arm-stellaris-eabi/bin:~/.bin:~/.zsh/plugins/scd:$PATH
+export PATH
+
