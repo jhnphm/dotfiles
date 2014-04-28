@@ -51,4 +51,4 @@ eval `dircolors`
 alias cp='cp --reflink=auto'
 alias ls='ls --color=auto'
 alias vi=vim
-
+alias s=scd
