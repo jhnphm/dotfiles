@@ -5,7 +5,7 @@ ZSH=$HOME/.zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="clean"
+ZSH_THEME="candy"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -51,3 +51,13 @@ alias ls='ls --color=auto'
 alias vi=vim
 alias s=scd
 alias rm=trash
+alias byobu='TERM=xterm-256color byobu'
+
+PATH=~/.opt/x-tools/arm-stellaris-eabi/bin:~/.bin:~/.zsh/plugins/scd:/usr/local/bin:/bin:/usr/bin
+export PATH
+
+# Disable git parse dirty
+function git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+    echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+}
