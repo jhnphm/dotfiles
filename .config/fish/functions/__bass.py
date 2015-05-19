@@ -1,3 +1,4 @@
+#! /usr/bin/python3
 """
 To be used with a companion fish function like this:
 
@@ -22,7 +23,7 @@ def gen_script():
     command = '{}; echo "{}"; env'.format(' '.join(sys.argv[1:]), divider)
     stdout, new_env = (subprocess
                        .check_output(['bash', '-c', command])
-                       .split(divider, 1))
+                       .decode().split(divider, 1))
     new_env = new_env.lstrip().splitlines()
 
     old_env = dict([line.split('=', 1) for line in old_env])
@@ -55,6 +56,7 @@ try:
     name = gen_script()
 except Exception as e:
     sys.stderr.write(str(e) + '\n')
+    raise e
     print('__error')
 else:
     print(name)
