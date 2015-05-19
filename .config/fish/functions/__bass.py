@@ -33,7 +33,7 @@ def gen_script():
     with os.fdopen(fd, 'w') as f:
         for line in stdout.splitlines():
             f.write("printf '%s\\n'\n" % line)
-        for k, v in new_env.items():
+        for k, v in list(new_env.items()):
             if k in skips:
                 continue
             v1 = old_env.get(k)
@@ -55,6 +55,6 @@ try:
     name = gen_script()
 except Exception as e:
     sys.stderr.write(str(e) + '\n')
-    print '__error'
+    print('__error')
 else:
-    print name
+    print(name)
